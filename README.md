@@ -11,7 +11,7 @@ The directory can either be empty or contain files. Run a status check on the di
 
 `git status`
 
-At this point there is a fully functional Git repository setup in the directory with a single branch named *master*. If the directory was empty you should see output like the following:
+At this point there is a fully functional Git repository setup in the directory with a single branch named `master`. If the directory was empty you should see output like the following:
 
     # On branch master
     #
@@ -30,14 +30,10 @@ Let's say you've been diligently working for a week or more and your other team 
 
 There's quite a bit going on in that one line, so let's break down the pieces a bit:
 
-### Telling git to add a remote: (`git remote add`)
-There are a number of different commands you can run using the *remote* command in git. To add a new remote definition to the repository you use the *add* command and provide it a name for the remote reference (typically 'origin') and the URL for it.
+1. **git remote add** (telling git to add a remote reference):<br/>There are a number of different commands you can run using the `remote` command in git. To add a new remote definition to the repository you use the `add` command and provide it a name for the remote reference (typically 'origin') and the URL  for it.
 
-### Telling git to merge your master with the remote master (`--track master`)
-This is optional, but will save you work later on once the remote connection is established. This line essentially tells git to treat the *master* branch on the server and the *master* branch in your local repository as the same and to merge them during pull operations.
+2. **--track master** (telling git to merge your master with the remote master):<br/>This is optional, but will save you work and confusion later on once the remote connection is established. This line essentially tells git to treat the `master` branch on the server and the `master` branch in your local repository as the same and to merge `origin/master` with your local `master` during pull operations.
 
-### Telling git the name of your remote reference (`origin`)
-Most Git repositories use *origin* as the remote reference. You can name it whatever you wish and you can have as many remote references as you wish.
+3. **origin** (telling git the name of your remote reference):<br/>Most Git repositories use `origin` as the remote reference. You can name it whatever you wish and you can have as many remote references as you wish.
 
-### Telling git the URL of the remote repository (`git@github.com:musicfuel/demo-empty-repository.git`)
-This is the URL that git will use to push and pull information to. 
+4. **git@github.com:musicfuel/demo-empty-repository.git** (telling git the URL of the remote repository):<br/>This is the URL that git will use to push and pull information to and from.
