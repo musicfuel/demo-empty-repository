@@ -1,7 +1,4 @@
-demo-empty-repository
-=====================
-
-Git encourages you to work locally a mojority of the time. The distributed nature of it means that you have a fully functional copy of the entire repository on your machine at all times. Unlike Subversion, the server is really secondary to the system and serves more as a convenient syncing mechanism for teams.
+Git requires you to work locally a majority of the time. The distributed nature of it means that you have a fully functional copy of the entire repository on your machine at all times. Unlike Subversion, the server is really secondary to the system and serves more as a convenient syncing mechanism for teams.
 
 Starting Locally
 ---------------
@@ -30,3 +27,17 @@ Connecting Remotely
 Let's say you've been diligently working for a week or more and your other team members responsible for source control now have a repository setup out on GitHub. You can of course clone that repository to somewhere and copy and paste your files into it to integrate your work (and honestly, that may be the best approach in some cases). Another option is to connect your local repository to the newly create remote repository using the *remote* command. 
 
 `git remote add --track master origin git@github.com:laughlin/repository-name.git`
+
+There's quite a bit going on in that one line, so let's break down the pieces a bit:
+
+### Telling git to add a remote: (`git remote add`)
+There are a number of different commands you can run using the *remote* command in git. To add a new remote definition to the repository you use the *add* command and provide it a name for the remote reference (typically 'origin') and the URL for it.
+
+### Telling git to merge your master with the remote master (`--track master`)
+This is optional, but will save you work later on once the remote connection is established. This line essentially tells git to treat the *master* branch on the server and the *master* branch in your local repository as the same and to merge them during pull operations.
+
+### Telling git the name of your remote reference (`origin`)
+Most Git repositories use *origin* as the remote reference. You can name it whatever you wish and you can have as many remote references as you wish.
+
+### Telling git the URL of the remote repository (`git@github.com:musicfuel/demo-empty-repository.git`)
+This is the URL that git will use to push and pull information to. 
